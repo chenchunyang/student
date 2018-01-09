@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="second.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">学生信息管理系统</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">首页</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">学生管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>添加学生</h1>
+        </div>
+    </header>
+    <div class="container">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">姓名：</label>
+                <div class="col-sm-2">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="姓名" required >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="age" class="col-sm-2 control-label">年龄：</label>
+                <div class="col-sm-1">
+                    <select name="age" id="age" class="form-control">
+                        <option value="18" selected>18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" class="col-sm-2 control-label">联系方式：</label>
+                <div class="col-sm-2">
+                    <input type="tel" class="form-control" id="phone" name="phone" required placeholder="联系方式" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">邮箱：</label>
+                <div class="col-sm-3">
+                    <input type="email" class="form-control" name="email" id="email" required placeholder="邮箱">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="intro" class="col-sm-2 control-label">个人介绍：</label>
+                <div class="col-sm-5">
+                    <textarea name="intro" id="intro" class="form-control" cols="30" rows="10" placeholder="个人介绍" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-1">
+                    <button type="submit" class="form-control btn btn-success">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script id="perData" type="text/html">
+        {{each data item index}}
+
+        {{/each}}
+    </script>
+
+    <script src="template-web.js"></script>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="second.js"></script>
+</body>
+
+</html>
