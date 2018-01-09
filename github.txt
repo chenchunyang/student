@@ -1,0 +1,26 @@
+git config --global user.name "chenchunyang"
+git config --global user.email "7746@qq.com"
+
+
+
+
+
+1、新建一个项目文件夹
+mkdir 文件夹名称
+2、git仓库初始化
+   git init
+3、常用的git命令
+1）git add  文件名 把文件添加到暂存区（不只一个文件时，可以使用*指代所有修改过的文件）
+2）git commit -m  "提交说明"提交文件到仓库
+3）git status 查看工作区的状态
+4）git diff  查看修改内容
+5）git log   查看提交历史
+6）git reset --hard 提交id 回退到某个历史版本
+7) git reflog 查看命令历史 回到未来的某个版本
+8) git checkout  --- 文件名 用仓库中该文件的最新版本覆盖工作区该文件
+9) git reset head 文件名 把添加到暂存区的文件从暂存区撤回
+10) rm 文件名 从工作区删除文件 
+11）git rm 文件名 从仓库中删除
+12)git clone 地址 可以从远程仓库获取最新项目
+13） git push  origin master 把主分支推送到远程仓库
+14)  git pull 从远程仓库抓取分支
