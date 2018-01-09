@@ -1,0 +1,220 @@
+1、html/css
+行标签a span small、块标签p div section nav 、行内块标签img
+
+布局方式：
+	流试布局
+	定位布局：绝对 、相对、固定fixed
+	弹性布局:flex justify-content主轴对齐方式；align-items：交叉轴方向对齐方式
+		flew-wrap：nowrap，wrap
+	浮动布局：float；
+	响应式布局:媒体查询 ；@media；
+
+css选择器:选择器优先级关系
+css sprite 图片精灵:background-img/repeat/size/position
+css 动画:
+	过渡效果:transition width(all) 2s
+	关键帧动画:animation  使用动画； @keyframes定义动画
+css图形变化；
+	transform：scale缩放 rotate旋转  translate平移 skew倾斜
+css常用单位：
+	px,%,em,rem,vh,vw；
+css盒模型：margin/border/padding/content
+	box-sizing:border-box/content-box；
+css第三方：animate.css ； font-awesome字体图标库
+
+2、js
+
+Number/String/Boolean/function/undefined
+Object/Array/Date/Math/Regex/JSON
+
+
+Number：parseInt() parseFloat()  num.toFixed()；
+
+
+String:str.slice() toUpperCase str.substr()  str.substring() indexof /endwith /startwith/includes()/split()分割/str.trim()去掉前后的空格     +(拼接)  
+
+
+Array：arr[i] splice length arr.push/ unshift /pop/shift   /concat for /forEach /filter indexOf map数组的映射 /sort（排序） /reduce()聚合操作，数组多个元素变为一个;
+
+ 
+布尔： && || ! == != === !==
+
+
+日期：new Date();
+	date.getFullYear()/getMonth()/getDate();
+	date.getHours()/getMinutes()/getSeconds();
+	date.getDay();
+	Date.now();
+
+数学函数：
+	Math.random();随机数
+	Math.ceil()/floor();向上（下）取整;
+	Math.round()；四舍五入;
+	Math.abs();绝对值；
+	Math.pow();次方运算；
+	Math.max();最大值;
+	Math.min()；最小值;
+	Math.sqrt();平方根；
+	三角函数、对数运算、
+JSON:
+	JSON.parse（）；
+	JSON.stringify（）；
+
+流程控制语句：if-else ；for；
+		break：跳出当前循环；
+	
+do-while,while:循环，类似for；
+区别：do-while ，先执行，后判断，至少执行一次；
+	while，先判断，后执行，可能一次也不执行.
+
+let j =-10;
+do{
+	console.log(j);
+	j--;
+}while(j>0);
+输出是-10；
+
+let j=-10;
+while{
+	console.log(j);
+	j--;
+	}
+
+定义类：
+	class:类名(首字母大写){
+				constructor(brand,price){
+				this.brand = brand;
+				this.price = price;
+				}
+				description(){
+						}
+}
+
+3、DOM操作原生API
+查找标签: querySelector()/querySelectorALL(),提取标签内容:innerHTML，innerText,value
+添加标签:appendChild()，
+删除标签:removeChild()；
+创建标签:cteateElement()；
+属性操作：setAttribute()/getAttribute();
+css操作：ele.style.cssName;
+class操作：className,classList;
+
+
+DOM是树形结构。
+
+
+4、DOM事件
+鼠标事件：click/mouseover/mouseout/mouseenter/mouseleave/mousedown/mouseup/wheel
+键盘事件:keyDown/keypress/keyup
+form事件:sumbit/focus/input/change/reset/blur
+focus/input/change 可以用于光标打开页面就在输入框
+滚动事件：scroll
+页面加载事件：load：html 页面以及引入的所有资源加载完成触发；
+		DOMContentLoaded：html页面加载解析完成触发；
+
+窗口大小变化事件：resize;
+document.onload =
+document.onDOMContentLoaded =
+window.onresize=
+
+事件监听的两种方式：on 写一个冲掉上一个,addEventListener 可以写多个;
+事件传播过程：捕获阶段，冒泡阶段；
+事件的默认行为：阻止默认行为；enent.preventDefault();
+
+5、jquery操作
+$('选择器').html()/text()/val();
+$('选择器').attr()/prop();
+$('选择器').css();
+$('选择器').addClass()/removeClass();
+$('选择器').append();
+$('选择器').parent()/siblings();
+$('选择器').width()/height()/innerWidth/innerHeigth/outerHeight;
+$('选择器').offset()偏移量/position()位置
+
+BOM:浏览器对象
+
+$('选择器').eventname(function(){});
+$('选择器').on('eventname',function(){});
+$('选择器').on('eventname','选择器',function(){});
+$('选择器').one('eventname',function(){});
+
+解除事件绑定
+$('选择器').off('eventname',要解绑定的函数名);缺省第二个参数，就click的所有函数全部解绑定
+
+jquery动画操作
+$('选择器').animate({属性},1s,动画完成的回调函数);
+$('选择器').delay();
+$('选择器').show();
+$('选择器').hide();
+$('选择器').finish();
+$('选择器').stop();
+
+js专门动画第三方  velocity.js
+
+
+jquery  ajax操作
+
+$.get();
+$.post();
+$.put();
+$.ajax();请求的通用写法
+
+6、art-template视图模版
+1)浏览器端模版
+<script id = "templateid" type ="text/html">
+	{{变量 | 过滤器名称}}
+	{{if}}
+	{{/if}}
+		{{each arr item index}}
+		{{/each}}
+		{{表达式?"" :""}}
+let html = template('id',jsonData)；
+
+2) 定义过滤器
+template.defaults.imports.过滤器名称 =
+function（oldvalue）{
+	return newValue;
+}
+
+7、NodeJs基本操作
+http：创建服务器createSever（）
+	监听request事件 sever.on（'request',(req,res)=>{}）
+	监听端口 sever.listen(3000);
+	get请求数据在url中，进行url.parse就可以得到数据对象
+	post请求数据在请求体中，需要监听request的data事件和end事件才能获取完整数据，
+	然后进行querystring.parse
+fs: writeFile()/readFile()/createReadStream();
+url
+querystring：
+
+8、浏览器端存储
+	localStorage
+	sessionStorage
+	cookie:jquery.cookie.js
+
+9、bootstrap
+响应式前端框架；用媒体查询实现  xz/sm/md/lg
+栅格系统：1）容器 .container(定宽)/.container-fluid（100%）
+		2）行 .row
+		3)一行分为12列；
+
+10、less
+css的预处理语言
+  	变量、函数、mixin、extend、@import、支持条件语句when、
+	支持循环操作 迭代;
+
+11、git
+git init
+git add *
+git commit -m'说明'
+git log 查看提交命令历史
+git reflog查看命令历史
+git status
+rm filename
+git rm filename
+git checkout --filename
+
+git clone ...
+git push origin master
+git pull
+git reset --hard commitid
